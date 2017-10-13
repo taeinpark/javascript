@@ -2,7 +2,19 @@
 <html>
 <head>
     <script type="text/javascript">
-      console.log(true || false); // true
+    console.log = function(msg) {
+        var ul = document.getElementById("log");
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode(msg));
+        ul.appendChild(li);
+    }
+
+    window.onload = function() {
+        document.getElementById("run").onclick = function() {
+            //
+            // 기존 자바스크립트 코드를 이쪽으로 옮김.
+            //
+console.log(true || false); // true
       console.log(true || true); // true
       console.log("string" || true); // string
       console.log(true || ""); // true
@@ -16,6 +28,8 @@
       console.log(null || ""); // ""
       console.log(null || false); // false
       console.log("yes" || "no"); // "yes"
+        }
+    }
     </script>
 </head>
 <body>
@@ -63,3 +77,4 @@
     </div> 
 </body>
 </html>
+
