@@ -2,6 +2,19 @@
 <html>
 <head>
     <script type="text/javascript">
+    console.log = function(msg) {
+        var ul = document.getElementById("log");
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode(msg));
+        ul.appendChild(li);
+    }
+
+    window.onload = function() {
+        document.getElementById("run").onclick = function() {
+            //
+            // 기존 자바스크립트 코드를 이쪽으로 옮김.
+            //
+
     var text1 = "안녕하세요.";
     var text2 = '안녕하세요.';
 
@@ -21,7 +34,8 @@
     console.log(text4);
     console.log(text5);
     console.log(text6);
-
+        }
+    }
     </script>
 </head>
 <body>
